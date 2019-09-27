@@ -6,7 +6,7 @@
 ##### On ***iOS*** 
  we are using:
 [SearchTextField](https://github.com/apasccon/SearchTextField)
-or actually my ***[sweet fork](https://github.com/apasccon/SearchTextField)*** ;)
+or actually my ***[sweet fork](https://github.com/chrum/SearchTextField)*** ;)
 
 ##### On Android
 that is not available yet
