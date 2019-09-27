@@ -1,0 +1,27 @@
+<Page class="page"
+      navigatingTo="onNavigatingTo"
+      loaded="pageLoaded"
+      xmlns:acx="nativescript-autocomplete-x"
+      xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar class="action-bar">
+        <Label class="action-bar-title" text="Home"></Label>
+    </ActionBar>
+
+    <StackLayout>
+        <GridLayout rows="auto, auto" columns="150, *">
+            <Label col="0" text="Autocomplete"></Label>
+            <acx:AutocompleteX col="1"
+                               placeholder="check autocomplete..."
+                               text="{{text}}"
+                               items="{{items}}"
+                               opened="onOpened"
+                               selected="onSelected"></acx:AutocompleteX>
+        </GridLayout>
+        <GridLayout rows="auto, auto" columns="150, *">
+            <Label col="0" text="Regular"></Label>
+            <TextField col="1"
+                    hint="just type..."></TextField>
+        </GridLayout>
+    </StackLayout>
+</Page>

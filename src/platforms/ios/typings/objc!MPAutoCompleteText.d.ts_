@@ -1,0 +1,364 @@
+declare const enum APICallType {
+
+    GET = 0,
+
+    POST = 1
+}
+
+declare class APIDataSource extends NSObject implements AutoCompletionTextFieldDataSource {
+
+    static alloc(): APIDataSource; // inherited from NSObject
+
+    static new(): APIDataSource; // inherited from NSObject
+
+    api_type: APICallType;
+
+    manager: AFHTTPSessionManager;
+
+    reqKey: string;
+
+    requestParams: NSMutableDictionary<any, any>;
+
+    requestURL: string;
+
+    rvalue: string;
+
+    readonly debugDescription: string; // inherited from NSObjectProtocol
+
+    readonly description: string; // inherited from NSObjectProtocol
+
+    readonly hash: number; // inherited from NSObjectProtocol
+
+    readonly isProxy: boolean; // inherited from NSObjectProtocol
+
+    readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+
+    readonly;  // inherited from NSObjectProtocol
+
+    class(): typeof NSObject;
+
+    conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+
+    fetchSuggestionsForIncompleteStringWithCompletionBlock(incompleteString: string, completion: (p1: NSArray<any>, p2: string, p3: string) => void): void;
+
+    isEqual(object: any): boolean;
+
+    isKindOfClass(aClass: typeof NSObject): boolean;
+
+    isMemberOfClass(aClass: typeof NSObject): boolean;
+
+    performSelector(aSelector: string): any;
+
+    performSelectorWithObject(aSelector: string, object: any): any;
+
+    performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+
+    respondsToSelector(aSelector: string): boolean;
+
+    retainCount(): number;
+
+    self(): this;
+}
+
+declare class APIRequestOperation extends GetJSONOperation {
+
+    static alloc(): APIRequestOperation; // inherited from NSObject
+
+    static new(): APIRequestOperation; // inherited from NSObject
+
+    manager: AFHTTPSessionManager;
+
+    reqKey: string;
+
+    reqValue: string;
+
+    req_type: requestType;
+
+    requestParams: NSMutableDictionary<any, any>;
+}
+
+declare class AutoCompletionUIKitDynamicsAnimation extends NSObject implements AutoCompletionAnimator {
+
+    static alloc(): AutoCompletionUIKitDynamicsAnimation; // inherited from NSObject
+
+    static new(): AutoCompletionUIKitDynamicsAnimation; // inherited from NSObject
+
+    readonly debugDescription: string; // inherited from NSObjectProtocol
+
+    readonly description: string; // inherited from NSObjectProtocol
+
+    readonly hash: number; // inherited from NSObjectProtocol
+
+    readonly isProxy: boolean; // inherited from NSObjectProtocol
+
+    readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+
+    readonly;  // inherited from NSObjectProtocol
+
+    class(): typeof NSObject;
+
+    conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+
+    hideSuggestionsForTextFieldTable(textField: AutoCompletionTextField, table: UITableView): void;
+
+    isEqual(object: any): boolean;
+
+    isKindOfClass(aClass: typeof NSObject): boolean;
+
+    isMemberOfClass(aClass: typeof NSObject): boolean;
+
+    performSelector(aSelector: string): any;
+
+    performSelectorWithObject(aSelector: string, object: any): any;
+
+    performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+
+    respondsToSelector(aSelector: string): boolean;
+
+    retainCount(): number;
+
+    self(): this;
+
+    showSuggestionsForTextFieldTableNumberOfItems(textField: AutoCompletionTextField, table: UITableView, count: number): void;
+}
+
+declare class CoreDataDataSource extends NSObject implements AutoCompletionTextFieldDataSource {
+
+    static alloc(): CoreDataDataSource; // inherited from NSObject
+
+    static new(): CoreDataDataSource; // inherited from NSObject
+
+    readonly debugDescription: string; // inherited from NSObjectProtocol
+
+    readonly description: string; // inherited from NSObjectProtocol
+
+    readonly hash: number; // inherited from NSObjectProtocol
+
+    readonly isProxy: boolean; // inherited from NSObjectProtocol
+
+    readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+
+    readonly;  // inherited from NSObjectProtocol
+
+    class(): typeof NSObject;
+
+    conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+
+    fetchSuggestionsForIncompleteStringWithCompletionBlock(incompleteString: string, completion: (p1: NSArray<any>, p2: string, p3: string) => void): void;
+
+    isEqual(object: any): boolean;
+
+    isKindOfClass(aClass: typeof NSObject): boolean;
+
+    isMemberOfClass(aClass: typeof NSObject): boolean;
+
+    performSelector(aSelector: string): any;
+
+    performSelectorWithObject(aSelector: string, object: any): any;
+
+    performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+
+    respondsToSelector(aSelector: string): boolean;
+
+    retainCount(): number;
+
+    self(): this;
+}
+
+declare class CoreDataManager extends NSObject {
+
+    static alloc(): CoreDataManager; // inherited from NSObject
+
+    static new(): CoreDataManager; // inherited from NSObject
+
+    static sharedInstance(): CoreDataManager;
+
+    managedObjectContext: NSManagedObjectContext;
+
+    managedObjectModel: NSManagedObjectModel;
+
+    persistentStoreCoordinator: NSPersistentStoreCoordinator;
+}
+
+declare class CoreDataOperation extends NSObject {
+
+    static alloc(): CoreDataOperation; // inherited from NSObject
+
+    static new(): CoreDataOperation; // inherited from NSObject
+
+    constructor(o: { completionBlock: (p1: NSArray<any>) => void; });
+
+    fetchObjectsWithString(string: string): void;
+
+    initWithCompletionBlock(completionBlock: (p1: NSArray<any>) => void): this;
+}
+
+declare class FetchOperation extends Operation {
+
+    static alloc(): FetchOperation; // inherited from NSObject
+
+    static new(): FetchOperation; // inherited from NSObject
+
+    constructor(o: { completionBlock: (p1: NSArray<any>) => void; incompleteString: string; });
+
+    initWithCompletionBlockIncompleteString(completionBlock: (p1: NSArray<any>) => void, string: string): this;
+}
+
+declare class GetJSONOperation extends NSOperation {
+
+    static alloc(): GetJSONOperation; // inherited from NSObject
+
+    static new(): GetJSONOperation; // inherited from NSObject
+
+    constructor(o: { downloadURL: NSURL; withCompletionBlock: (p1: NSArray<any>, p2: string, p3: string) => void; });
+
+    initWithDownloadURLWithCompletionBlock(url: NSURL, completion: (p1: NSArray<any>, p2: string, p3: string) => void): this;
+}
+
+declare class Items extends NSManagedObject {
+
+    static alloc(): Items; // inherited from NSObject
+
+    static new(): Items; // inherited from NSObject
+
+    title: string;
+}
+
+declare class JSONDataSource extends NSObject implements AutoCompletionTextFieldDataSource {
+
+    static alloc(): JSONDataSource; // inherited from NSObject
+
+    static new(): JSONDataSource; // inherited from NSObject
+
+    readonly debugDescription: string; // inherited from NSObjectProtocol
+
+    readonly description: string; // inherited from NSObjectProtocol
+
+    readonly hash: number; // inherited from NSObjectProtocol
+
+    readonly isProxy: boolean; // inherited from NSObjectProtocol
+
+    readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+
+    readonly;  // inherited from NSObjectProtocol
+
+    class(): typeof NSObject;
+
+    conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+
+    fetchSuggestionsForIncompleteStringWithCompletionBlock(incompleteString: string, completion: (p1: NSArray<any>, p2: string, p3: string) => void): void;
+
+    isEqual(object: any): boolean;
+
+    isKindOfClass(aClass: typeof NSObject): boolean;
+
+    isMemberOfClass(aClass: typeof NSObject): boolean;
+
+    performSelector(aSelector: string): any;
+
+    performSelectorWithObject(aSelector: string, object: any): any;
+
+    performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+
+    respondsToSelector(aSelector: string): boolean;
+
+    retainCount(): number;
+
+    self(): this;
+}
+
+declare class JSONGenerator extends NSObject {
+
+    static alloc(): JSONGenerator; // inherited from NSObject
+
+    static new(): JSONGenerator; // inherited from NSObject
+}
+
+declare class JSONItem extends NSObject {
+
+    static alloc(): JSONItem; // inherited from NSObject
+
+    static new(): JSONItem; // inherited from NSObject
+
+    title: string;
+
+    value: string;
+
+    constructor(o: { dictionary: NSDictionary<any, any>; });
+
+    initWithDictionary(dictionary: NSDictionary<any, any>): this;
+}
+
+declare class JSONManager extends NSObject {
+
+    static alloc(): JSONManager; // inherited from NSObject
+
+    static getItemsFromApiResponseDataObject(responseData: NSData): NSArray<any>;
+
+    static items(): NSArray<any>;
+
+    static new(): JSONManager; // inherited from NSObject
+}
+
+declare var MPAutoCompleteTextVersionNumber: number;
+
+declare var MPAutoCompleteTextVersionString: interop.Reference<number>;
+
+declare class Operation extends NSOperation {
+
+    static alloc(): Operation; // inherited from NSObject
+
+    static new(): Operation; // inherited from NSObject
+
+    completionWithError: (p1: NSError) => void;
+
+    completionWithSuccess: (p1: NSError) => void;
+
+    completedWithError(error: NSError): void;
+
+    completedWithSuccess(): void;
+}
+
+declare class RequestObject extends NSObject {
+
+    static alloc(): RequestObject; // inherited from NSObject
+
+    static new(): RequestObject; // inherited from NSObject
+}
+
+declare class RequestOperation extends NSOperation {
+
+    static alloc(): RequestOperation; // inherited from NSObject
+
+    static new(): RequestOperation; // inherited from NSObject
+
+    constructor(o: { url: NSURL; completion: (p1: NSURL, p2: NSURLResponse, p3: NSData, p4: NSError) => void; });
+
+    initWithUrlCompletion(url: NSURL, completion: (p1: NSURL, p2: NSURLResponse, p3: NSData, p4: NSError) => void): this;
+}
+
+declare const enum State {
+
+    Initialized = 0,
+
+    Pending = 1,
+
+    EvaluateConditions = 2,
+
+    Ready = 3,
+
+    Executing = 4,
+
+    Finishing = 5,
+
+    Finished = 6,
+
+    Canceled = 7
+}
+
+declare const enum requestType {
+
+    GET = 0,
+
+    POST = 1
+}

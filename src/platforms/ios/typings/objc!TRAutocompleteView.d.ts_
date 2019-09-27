@@ -1,0 +1,233 @@
+interface TRAutocompleteItemsSource extends NSObjectProtocol {
+
+    itemsForWhenReady(query: string, suggestionsReady: (p1: Array<any>) => void): void;
+
+    minimumCharactersToTrigger(): number;
+}
+
+declare var TRAutocompleteItemsSource: {
+
+    prototype: TRAutocompleteItemsSource;
+};
+
+declare class TRAutocompleteView extends UIView {
+
+    static alloc(): TRAutocompleteView; // inherited from NSObject
+
+    static appearance(): TRAutocompleteView; // inherited from UIAppearance
+
+    static appearanceForTraitCollection(trait: UITraitCollection): TRAutocompleteView; // inherited from UIAppearance
+
+    static appearanceForTraitCollectionWhenContainedIn(trait: UITraitCollection, ContainerClass: typeof NSObject): TRAutocompleteView; // inherited from UIAppearance
+
+    static appearanceForTraitCollectionWhenContainedInInstancesOfClasses(trait: UITraitCollection, containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): TRAutocompleteView; // inherited from UIAppearance
+
+    static appearanceWhenContainedIn(ContainerClass: typeof NSObject): TRAutocompleteView; // inherited from UIAppearance
+
+    static appearanceWhenContainedInInstancesOfClasses(containerTypes: NSArray<typeof NSObject> | typeof NSObject[]): TRAutocompleteView; // inherited from UIAppearance
+
+    static autocompleteViewBindedToUsingSourceCellFactoryPresentingIn(
+        textField: UITextField,
+        itemsSource: TRAutocompleteItemsSource,
+        factory: TRAutocompletionCellFactory,
+        controller: UIViewController
+    ): TRAutocompleteView;
+
+    static new(): TRAutocompleteView; // inherited from NSObject
+
+    didAutocompleteWith: (p1: TRSuggestionItem) => void;
+
+    readonly selectedSuggestion: TRSuggestionItem;
+
+    separatorColor: UIColor;
+
+    separatorStyle: UITableViewCellSeparatorStyle;
+
+    readonly suggestions: NSArray<any>;
+
+    topMargin: number;
+}
+
+declare var TRAutocompleteViewVersionNumber: number;
+
+declare var TRAutocompleteViewVersionString: interop.Reference<number>;
+
+interface TRAutocompletionCell extends NSObjectProtocol {
+
+
+    updateWith(item: TRSuggestionItem): void;
+}
+
+declare var TRAutocompletionCell: {
+
+    prototype: TRAutocompletionCell;
+};
+
+interface TRAutocompletionCellFactory extends NSObjectProtocol {
+
+    createReusableCellWithIdentifier(identifier: string): TRAutocompletionCell;
+}
+
+declare var TRAutocompletionCellFactory: {
+
+    prototype: TRAutocompletionCellFactory;
+};
+
+declare class TRGoogleMapsAutocompleteItemsSource extends NSObject implements TRAutocompleteItemsSource {
+
+    static alloc(): TRGoogleMapsAutocompleteItemsSource; // inherited from NSObject
+
+    static new(): TRGoogleMapsAutocompleteItemsSource; // inherited from NSObject
+
+    location: CLLocationCoordinate2D;
+
+    radiusMeters: number;
+
+    readonly debugDescription: string; // inherited from NSObjectProtocol
+
+    readonly description: string; // inherited from NSObjectProtocol
+
+    readonly hash: number; // inherited from NSObjectProtocol
+
+    readonly isProxy: boolean; // inherited from NSObjectProtocol
+
+    readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+
+    readonly;  // inherited from NSObjectProtocol
+
+    constructor(o: { minimumCharactersToTrigger: number; apiKey: string; });
+
+    class(): typeof NSObject;
+
+    conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+
+    initWithMinimumCharactersToTriggerApiKey(minimumCharactersToTrigger: number, apiKey: string): this;
+
+    isEqual(object: any): boolean;
+
+    isKindOfClass(aClass: typeof NSObject): boolean;
+
+    isMemberOfClass(aClass: typeof NSObject): boolean;
+
+    itemsForWhenReady(query: string, suggestionsReady: (p1: NSArray<any>) => void): void;
+
+    minimumCharactersToTrigger(): number;
+
+    performSelector(aSelector: string): any;
+
+    performSelectorWithObject(aSelector: string, object: any): any;
+
+    performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+
+    respondsToSelector(aSelector: string): boolean;
+
+    retainCount(): number;
+
+    self(): this;
+}
+
+declare class TRGoogleMapsAutocompletionCellFactory extends NSObject implements TRAutocompletionCellFactory {
+
+    static alloc(): TRGoogleMapsAutocompletionCellFactory; // inherited from NSObject
+
+    static new(): TRGoogleMapsAutocompletionCellFactory; // inherited from NSObject
+
+    readonly debugDescription: string; // inherited from NSObjectProtocol
+
+    readonly description: string; // inherited from NSObjectProtocol
+
+    readonly hash: number; // inherited from NSObjectProtocol
+
+    readonly isProxy: boolean; // inherited from NSObjectProtocol
+
+    readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+
+    readonly;  // inherited from NSObjectProtocol
+
+    constructor(o: { cellForegroundColor: UIColor; fontSize: number; });
+
+    class(): typeof NSObject;
+
+    conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+
+    createReusableCellWithIdentifier(identifier: string): TRAutocompletionCell;
+
+    initWithCellForegroundColorFontSize(foregroundColor: UIColor, fontSize: number): this;
+
+    isEqual(object: any): boolean;
+
+    isKindOfClass(aClass: typeof NSObject): boolean;
+
+    isMemberOfClass(aClass: typeof NSObject): boolean;
+
+    performSelector(aSelector: string): any;
+
+    performSelectorWithObject(aSelector: string, object: any): any;
+
+    performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+
+    respondsToSelector(aSelector: string): boolean;
+
+    retainCount(): number;
+
+    self(): this;
+}
+
+declare class TRGoogleMapsSuggestion extends NSObject implements TRSuggestionItem {
+
+    static alloc(): TRGoogleMapsSuggestion; // inherited from NSObject
+
+    static new(): TRGoogleMapsSuggestion; // inherited from NSObject
+
+    address: string;
+
+    readonly debugDescription: string; // inherited from NSObjectProtocol
+
+    readonly description: string; // inherited from NSObjectProtocol
+
+    readonly hash: number; // inherited from NSObjectProtocol
+
+    readonly isProxy: boolean; // inherited from NSObjectProtocol
+
+    readonly superclass: typeof NSObject; // inherited from NSObjectProtocol
+
+    readonly;  // inherited from NSObjectProtocol
+
+    constructor();
+
+    class(): typeof NSObject;
+
+    completionText(): string;
+
+    conformsToProtocol(aProtocol: any /* Protocol */): boolean;
+
+    initWith(address: string): this;
+
+    isEqual(object: any): boolean;
+
+    isKindOfClass(aClass: typeof NSObject): boolean;
+
+    isMemberOfClass(aClass: typeof NSObject): boolean;
+
+    performSelector(aSelector: string): any;
+
+    performSelectorWithObject(aSelector: string, object: any): any;
+
+    performSelectorWithObjectWithObject(aSelector: string, object1: any, object2: any): any;
+
+    respondsToSelector(aSelector: string): boolean;
+
+    retainCount(): number;
+
+    self(): this;
+}
+
+interface TRSuggestionItem extends NSObjectProtocol {
+
+    completionText(): string;
+}
+
+declare var TRSuggestionItem: {
+
+    prototype: TRSuggestionItem;
+};

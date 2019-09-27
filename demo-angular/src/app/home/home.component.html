@@ -1,0 +1,29 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Home"></Label>
+</ActionBar>
+
+
+<StackLayout class="page">
+    <StackLayout class="form">
+        <GridLayout class="input-field input-sides" rows="auto, auto, auto" columns="*">
+            <Label text="Title" class="label " row="0" col="0"></Label>
+
+            <AutocompleteX row="1" col="0"
+                         [placeholder]="'Placeholder...'"
+                         [items]="items"
+                         [maxVisibleRows]="4"
+                         [currentTextInResultsPrefixProperty]="'Use: '"
+                         (opened)="onOpened()"
+                         (selected)="onSelected($event)"></AutocompleteX>
+            <StackLayout class="hr-light" row="2" colSpan="0"></StackLayout>
+        </GridLayout>
+
+        <GridLayout class="input-field input-sides" rows="auto, auto, auto" columns="*">
+            <Label text="Title" class="label " row="0" col="0"></Label>
+
+            <TextField row="1" col="0"
+                       [placeholder]="'another...'"></TextField>
+            <StackLayout class="hr-light" row="2" colSpan="0"></StackLayout>
+        </GridLayout>
+    </StackLayout>
+</StackLayout>
