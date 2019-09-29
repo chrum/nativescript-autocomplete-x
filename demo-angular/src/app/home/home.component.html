@@ -11,8 +11,7 @@
             <AutocompleteX row="1" col="0"
                          [placeholder]="'Placeholder...'"
                          [items]="items"
-                         [maxVisibleRows]="4"
-                         [currentTextInResultsPrefixProperty]="'Use: '"
+                         [currentTextInResultsPrefix]="'Use: '"
                          (opened)="onOpened()"
                          (selected)="onSelected($event)"></AutocompleteX>
             <StackLayout class="hr-light" row="2" colSpan="0"></StackLayout>

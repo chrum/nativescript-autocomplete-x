@@ -44,7 +44,7 @@ export const textProperty = new Property<AutocompleteXBase, string>({
 textProperty.register(AutocompleteXBase);
 
 export const currentTextInResultsPrefixProperty = new Property<AutocompleteXBase, string>({
-    name: 'currentTextInResultsPrefixProperty',
+    name: 'currentTextInResultsPrefix',
     defaultValue: ''
 });
 currentTextInResultsPrefixProperty.register(AutocompleteXBase);

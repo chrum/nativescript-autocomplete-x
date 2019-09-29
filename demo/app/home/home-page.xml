@@ -13,9 +13,7 @@
             <Label col="0" text="Autocomplete"></Label>
             <acx:AutocompleteX col="1"
                                placeholder="check autocomplete..."
-                               text="{{text}}"
                                items="{{items}}"
-                               opened="onOpened"
                                selected="onSelected"></acx:AutocompleteX>
         </GridLayout>
         <GridLayout rows="auto, auto" columns="150, *">

@@ -11,10 +11,26 @@ or actually my ***[sweet fork](https://github.com/chrum/SearchTextField)*** ;)
 ##### On Android
 that is not available yet
 
+## Demo apps
+
+#### NativeScript-Core (XML)
+Check out the [demo](/demo) folder. This is how to clone and run it:
+
+```bash
+git clone https://github.com/chrum/nativescript-autocomplete-x
+cd nativescript-autocomplete-x/src
+npm run demo.ios
+```
+
+#### NativeScript-Angular
+Check out the [demo-angular](/demo-angular) folder. This is how to clone and run it:
+
+```bash
+git clone https://github.com/chrum/nativescript-autocomplete-x
+cd nativescript-autocomplete-x/src
+npm run demo-angular.ios
+```
 ## Installation
-
-Describe your plugin installation steps. Ideally it would be something like:
-
 ```javascript
 tns plugin add nativescript-autocomplete-x
 ```
@@ -22,12 +38,12 @@ tns plugin add nativescript-autocomplete-x
 ## Usage 
 
 # Core
-<span style="color:red">IMPORTANT: </span>_Make sure you include `xmlns:acx="nativescript-autocomplete-x"` on the Page element_
+***IMPORTANT !!!*** Make sure you include `xmlns:acx="nativescript-autocomplete-x"` on the Page element
 ```xml
 <Page class="page" xmlns:acx="nativescript-autocomplete-x">
     <StackLayout>
         <acx:AutocompleteX placeholder="check autocomplete..."
-                           text="{{ text }}"
+                           currentTextInResultsPrefix="Use: "
                            items="{{ ['First', 'Second', 'Third'] }}"
                            selected="onSelected"></acx:AutocompleteX>
     </StackLayout>
@@ -35,14 +51,9 @@ tns plugin add nativescript-autocomplete-x
 
 ```
 
-Describe any usage specifics for your plugin. Give examples for Android, iOS, Angular if needed. See [nativescript-drop-down](https://www.npmjs.com/package/nativescript-drop-down) for example.
-	
-	```javascript
-    Usage code snippets here
-    ```)
-
 # Angular
-
+Include AutocompleteXModule in your @NgModule  
+***IMPORTANT !!!*** you need to do it for every module that will be autocompleting things ;)
 ```typescript
 import { AutocompleteXModule } from 'nativescript-autocomplete-x/angular';
 
@@ -58,20 +69,23 @@ import { AutocompleteXModule } from 'nativescript-autocomplete-x/angular';
 ```html
 <AutocompleteX [placeholder]="'Placeholder...'"
                [items]="items"
-               [maxVisibleRows]="4"
-               [currentTextInResultsPrefixProperty]="'Use: '"
+               [currentTextInResultsPrefix]="'Use: '"
                (selected)="onSelected($event)">
 </AutocompleteX>
 ```
 
 ## API [ TODO ]
+### Properties    
+| Property | Default | Type | Description |
+| --- | --- | --- | --- |
+| items |  | `Array<string>` | array with strings that should be used as autocomplete source |
+| placeholder |  | `String` |  |
+| currentTextInResultsPrefix |  | `String` | If set then typed text will appear as the first item on the suggestions list prefixed with this value. <br><br>***Example*** <br>if this one is set to  `'Use:'`<br> then first item on the suggestions list will be `'Use: {typed text}'`  |
 
-Describe your plugin methods and properties here. See [nativescript-feedback](https://github.com/EddyVerbruggen/nativescript-feedback) for example.
-    
-| Property | Default | Description |
+### Events    
+| Property | Type | Description |
 | --- | --- | --- |
-| some property | property default value | property description, default values, etc.. |
-| another property | property default value | property description, default values, etc.. |
+| selected | (args: String): void | fired when selected suggestion gets tapped |
 
 ## Authors
 
