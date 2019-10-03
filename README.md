@@ -87,6 +87,21 @@ import { AutocompleteXModule } from 'nativescript-autocomplete-x/angular';
 | --- | --- | --- |
 | selected | (args: String): void | fired when selected suggestion gets tapped |
 
+
+#Troubleshooting
+### iOS
+When runnig demos or your app on **simulator** it might happen (and most likely will) that app **will simply crash**.  
+Try running the app directly from xcode and if there you will get a **runtime error**:
+```
+dyld: Library not loaded: @rpath/libswiftCore.dylib
+...
+...
+Reason: no suitable image found.  Did find:
+	/usr/lib/swift/libswiftCore.dylib: mach-o, but not built for iOS simulator
+
+```
+here is what might help: [https://stackoverflow.com/a/26949219/5168768](https://stackoverflow.com/a/26949219/5168768)
+
 ## Authors
 
 [Chrystian Ruminowicz](http://chrum.it)
