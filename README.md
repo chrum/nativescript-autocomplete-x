@@ -88,10 +88,10 @@ import { AutocompleteXModule } from 'nativescript-autocomplete-x/angular';
 | selected | (args: String): void | fired when selected suggestion gets tapped |
 
 
-#Troubleshooting
+# Troubleshooting
 ### iOS
 When runnig demos or your app on **simulator** it might happen (and most likely will) that app **will simply crash**.  
-Try running the app directly from xcode and if there you will get a **runtime error**:
+Try running the app directly from xcode and there, if you will see a **runtime error**:
 ```
 dyld: Library not loaded: @rpath/libswiftCore.dylib
 ...
