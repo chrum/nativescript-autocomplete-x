@@ -12,14 +12,18 @@
         <GridLayout rows="auto, auto" columns="150, *">
             <Label col="0" text="Autocomplete"></Label>
             <acx:AutocompleteX col="1"
-                               placeholder="check autocomplete..."
+                               editable="true"
+                               text="{{ autocompleteText }}"
+                               hint="check autocomplete..."
                                items="{{items}}"
                                selected="onSelected"></acx:AutocompleteX>
         </GridLayout>
-        <GridLayout rows="auto, auto" columns="150, *">
-            <Label col="0" text="Regular"></Label>
-            <TextField col="1"
-                    hint="just type..."></TextField>
+
+
+        <GridLayout rows="auto, auto" columns="150, *" class="m-t-30">
+            <Label col="0" text="Current text"></Label>
+
+            <Label col="1" text="{{ currentText }}" textWrap="true" />
         </GridLayout>
     </StackLayout>
 </Page>

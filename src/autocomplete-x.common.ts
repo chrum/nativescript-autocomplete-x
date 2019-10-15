@@ -1,11 +1,21 @@
-import {CSSType, Property, View, EventData} from 'tns-core-modules/ui/core/view';
+import {CSSType, Property, View, EventData, booleanConverter} from 'tns-core-modules/ui/core/view';
+
+export interface AutocompleteXEvent extends EventData {
+    text: string;
+}
 
 export class AutocompleteXBase extends View {
     public static openedEvent = 'opened';
     public static closedEvent = 'closed';
     public static selectedEvent = 'selected';
+    public static textChangedEvent = 'textChange';
 
-    public placeholder: string;
+    /* To make it 'compatible with regular {N} TextField */
+    public editable: boolean;
+    public autocorrect: boolean;
+    public hint: string;
+    public maxLength: number;
+
     public text: string;
     public items: Array<string>;
     public maxVisibleRows: number;
@@ -49,14 +59,22 @@ export const currentTextInResultsPrefixProperty = new Property<AutocompleteXBase
 });
 currentTextInResultsPrefixProperty.register(AutocompleteXBase);
 
-export const placeholderProperty = new Property<AutocompleteXBase, string>({
-    name: 'placeholder',
-    defaultValue: ''
-});
-placeholderProperty.register(AutocompleteXBase);
-
 export const itemsProperty = new Property<AutocompleteXBase, Array<any>>({
     name: 'items',
     defaultValue: [],
 });
 itemsProperty.register(AutocompleteXBase);
+
+/* To make it 'compatible with regular {N} TextField */
+export const editableProperty = new Property<AutocompleteXBase, boolean>({ name: "editable", defaultValue: true, valueConverter: booleanConverter });
+editableProperty.register(AutocompleteXBase);
+
+export const autocorrectProperty = new Property<AutocompleteXBase, boolean>({ name: "autocorrect", valueConverter: booleanConverter });
+autocorrectProperty.register(AutocompleteXBase);
+
+export const hintProperty = new Property<AutocompleteXBase, string>({ name: "hint", defaultValue: "" });
+hintProperty.register(AutocompleteXBase);
+
+export const maxLengthProperty = new Property<AutocompleteXBase, number>({ name: "maxLength", defaultValue: Number.POSITIVE_INFINITY, valueConverter: parseInt });
+maxLengthProperty.register(AutocompleteXBase);
+

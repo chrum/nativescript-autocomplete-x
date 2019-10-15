@@ -1,4 +1,5 @@
 # [WORK - IN - PROGRESS ]
+### [ only iOS so far ]
 # nativescript-autocomplete-x
 
 ***nativescript-autocomplete-x*** is a NativeScript plugin for autocompleting (suggesting) text field content
@@ -78,14 +79,16 @@ import { AutocompleteXModule } from 'nativescript-autocomplete-x/angular';
 ### Properties    
 | Property | Default | Type | Description |
 | --- | --- | --- | --- |
-| items |  | `Array<string>` | array with strings that should be used as autocomplete source |
-| placeholder |  | `String` |  |
-| currentTextInResultsPrefix |  | `String` | If set then typed text will appear as the first item on the suggestions list prefixed with this value. <br><br>***Example*** <br>if this one is set to  `'Use:'`<br> then first item on the suggestions list will be `'Use: {typed text}'`  |
+| text |  | `string` | Gets or sets the text |
+| items | [ ] | `Array<string>` | array with strings that should be used as autocomplete source |
+| hint |  | `string` | Placeholder |
+| editable | false | `boolean` | |
+| currentTextInResultsPrefix |  | `string` | If set then typed text will appear as the first item on the suggestions list prefixed with this value. <br><br>***Example*** <br>if this one is set to  `'Use:'`<br> then first item on the suggestions list will be `'Use: {typed text}'`  |
 
 ### Events    
 | Property | Type | Description |
 | --- | --- | --- |
-| selected | (args: String): void | fired when selected suggestion gets tapped |
+| selected | (args: string): void | fired when selected suggestion gets tapped |
 
 
 # Troubleshooting
@@ -94,9 +97,11 @@ import { AutocompleteXModule } from 'nativescript-autocomplete-x/angular';
 
 
 ## TODO
+* **Android** support
 * expose clear button mode
 * font configuration
 * theming, bg color
+* more compatibility features with {N} TextField
 
 ## Authors
 
