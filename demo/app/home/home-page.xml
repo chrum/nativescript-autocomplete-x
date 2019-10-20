@@ -13,6 +13,7 @@
             <Label col="0" text="Autocomplete"></Label>
             <acx:AutocompleteX col="1"
                                editable="true"
+                               currentTextInResultsPrefix="Use: "
                                text="{{ autocompleteText }}"
                                hint="check autocomplete..."
                                items="{{items}}"

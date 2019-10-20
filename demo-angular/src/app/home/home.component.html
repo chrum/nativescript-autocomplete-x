@@ -1,5 +1,5 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="Home"></Label>
+    <Label class="action-bar-title" [text]="text"></Label>
 </ActionBar>
 
 
@@ -7,12 +7,13 @@
     <StackLayout class="form">
         <GridLayout class="input-field input-sides" rows="auto, auto, auto" columns="*">
             <Label text="Title" class="label " row="0" col="0"></Label>
-
+a
             <AutocompleteX row="1" col="0"
-                         [placeholder]="'Placeholder...'"
+                         [(ngModel)]="text"
+                         (textChange)="onTextChanged($event)"
+                         [hint]="'Placeholder...'"
                          [items]="items"
                          [currentTextInResultsPrefix]="'Use: '"
-                         (opened)="onOpened()"
                          (selected)="onSelected($event)"></AutocompleteX>
             <StackLayout class="hr-light" row="2" colSpan="0"></StackLayout>
         </GridLayout>
@@ -21,7 +22,7 @@
             <Label text="Title" class="label " row="0" col="0"></Label>
 
             <TextField row="1" col="0"
-                       [placeholder]="'another...'"></TextField>
+                       [hint]="'another...'"></TextField>
             <StackLayout class="hr-light" row="2" colSpan="0"></StackLayout>
         </GridLayout>
     </StackLayout>

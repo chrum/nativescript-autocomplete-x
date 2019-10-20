@@ -88,7 +88,7 @@ import { AutocompleteXModule } from 'nativescript-autocomplete-x/angular';
 ### Events    
 | Property | Type | Description |
 | --- | --- | --- |
-| selected | (args: string): void | fired when selected suggestion gets tapped |
+| selected | (args: { text: string}): void | fired when selected suggestion gets tapped |
 
 
 # Troubleshooting
