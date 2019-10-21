@@ -1,6 +1,6 @@
 {
 	"name": "nativescript-autocomplete-x",
-	"version": "0.0.1",
+	"version": "0.0.3",
 	"description": "NativeScript autocomplete plugin",
 	"main": "autocomplete-x",
 	"typings": "index.d.ts",
