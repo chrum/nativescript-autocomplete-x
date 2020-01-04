@@ -1,6 +1,6 @@
 {
 	"name": "nativescript-autocomplete-x",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "NativeScript autocomplete plugin",
 	"main": "autocomplete-x",
 	"typings": "index.d.ts",
@@ -15,7 +15,8 @@
 		"url": "https://github.com/chrum/nativescript-autocomplete-x.git"
 	},
 	"scripts": {
-		"tsc": "npm i && tsc",
+		"tsc": "npm i && tsc --project tsconfig.json",
+		"ngc": "ngc --project tsconfig.aot.json",
 		"build": "npm run tsc && npm run build.native",
 		"build.native": "node scripts/build-native.js",
 		"tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
@@ -51,6 +52,7 @@
 	"devDependencies": {
 		"@angular/common": "^8.2.8",
 		"@angular/compiler": "^8.2.8",
+		"@angular/compiler-cli": "^8.2.14",
 		"@angular/core": "^8.2.6",
 		"@angular/forms": "^8.2.8",
 		"@angular/platform-browser": "^8.2.8",
